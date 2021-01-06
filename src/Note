@@ -1,0 +1,31 @@
+Making use of redux to switch the state management we install
+we run npm i redux react-redux
+
+Redux is for state management and this is done by creating a global store
+where data can be accessed from different as well as nexted component. Redux creates a place
+to store the data and provides a way to update the data. 
+
+react-redux is the glue that connect your react application to redux allowing for 
+your react application to have access to the redux store.
+
+Now we will refactor our application because the count will be coming in as a props (property)
+First we need to import createStore from redux as well as well as pass in the reducer function 
+into the createStore method.
+
+The reducer takes two parameter state and action. State is to store the initial state while
+action is to dispatch.
+
+To connect the component with the store we import the connect from react-redux library.
+and export it along side the counter component as a higer order component.
+
+To make the connected counter component know about the store in index.js we need to make use of the 
+provider. We import Provider from react-redux library and pass in the store as a props to the provider
+
+After all of these the counter still does not know about the current state. We have to explicitly tell
+connect the data we want to pull out from the redux state. We do that by providing a function called
+map state to props. The function receives the state and map state to props receives an object where
+the key name are prop names and the values are the values of the props.
+
+When we connect the component the connect component passes the dispatch function as a prop.
+So all we need to do is call this dispatch in our component.
+
