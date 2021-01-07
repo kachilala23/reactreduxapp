@@ -29,3 +29,7 @@ the key name are prop names and the values are the values of the props.
 When we connect the component the connect component passes the dispatch function as a prop.
 So all we need to do is call this dispatch in our component.
 
+An action in redux is just a plain old object in javascript that has a type property. 
+We can make use of the mapdispatch method to map dispatch to component by passing the method
+as a second parameter to the connect method.
+
